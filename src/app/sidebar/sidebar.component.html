@@ -70,13 +70,40 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="/mahasiswa" class="nav-link {{ moduleName == 'mahasiswa' ? 'active' : ''}}">
+          <a [routerLink]="['/mahasiswa']" routerLinkActive="router-link-active"
+            class="nav-link {{ moduleName == 'mahasiswa' ? 'active' : ''}}">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Mahasiswa
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a [routerLink]="['/forex']" routerLinkActive="router-link-active"
+            class="nav-link {{ moduleName == 'forex' ? 'active' : ''}}">
+            <i class="nav-icon far fa-money-bill-alt"></i>
+            <p>
+              Forex
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/cuaca']" routerLinkActive="router-link-active"
+            class="nav-link {{ moduleName == 'cuaca' ? 'active' : ''}}">
+            <i class="nav-icon fas fa-cloud-rain"></i>
+            <p>
+              Cuaca
+            </p>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="/mahasiswa" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p>
+              Mahasiswa (Non-router)
+            </p>
+          </a>
+        </li> -->
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>

@@ -6,17 +6,22 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { Dashboard3Component } from './dashboard3/dashboard3.component';
+import { ForexComponent } from './forex/forex.component';
 import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
+import { otentikasiGuard } from './otentikasi.guard';
+import { CuacaComponent } from './cuaca/cuaca.component';
 
 const routes: Routes = [
   {path: "admin", component: AdminComponent},
   {path:"login", component: LoginComponent},
   {path:"register", component: RegisterComponent},
-  {path:"dashboard",component: DashboardComponent},
-  {path:"dashboard2", component:Dashboard2Component},
+  {path:"dashboard",component: DashboardComponent, canActivate: [otentikasiGuard]},
+  {path:"dashboard2", component:Dashboard2Component, canActivate: [otentikasiGuard]},
+  {path:"forex", component:ForexComponent, canActivate: [otentikasiGuard]},
   {path:"dashboard3",component:Dashboard3Component},
-  {path:"mahasiswa", component: MahasiswaComponent},
-  {path:"", redirectTo:"login", pathMatch:"full"}
+  {path:"mahasiswa", component: MahasiswaComponent, canActivate:[otentikasiGuard]},
+  {path:"", redirectTo:"login", pathMatch:"full"},
+  {path:"cuaca",component: CuacaComponent, canActivate:[otentikasiGuard]},
 ];
 
 @NgModule({
